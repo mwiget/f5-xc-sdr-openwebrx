@@ -17,6 +17,8 @@ Click 'Sign Up' for a free individual account for Distributed apps in our networ
 
 Attach the SDR receiver to a free high speed USB port of your kubernetes node.
 
+![hackrf one](doc/hackrf_one.jpg)
+
 Clone the repo [https://github.com/mwiget/f5-xc-sdr-openwebrx](https://github.com/mwiget/f5-xc-sdr-openwebrx):
 
 ```
