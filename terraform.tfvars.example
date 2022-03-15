@@ -1,0 +1,12 @@
+projectPrefix = "<prefix>"
+siteName = "<k8s-site-name>"
+fqdn = "openwebrx.mydomain.org"
+
+# production tenant:
+volterraUrl = "https://console.ves.volterra.io/api"
+volterraP12 = "<path to api-creds.p12>"
+
+# staging tenant:
+#volterraUrl = "https://playground.staging.volterra.us/api"
+#volterraP12 = "/home/mwiget/playground.staging.api-creds.p12"
+#volterraCaCert = "/home/mwiget/.ves-internal/staging/cacerts/public_server_ca.crt"

@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openwebrx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openwebrx
+  template:
+    metadata:
+      labels:
+        app: openwebrx
+    spec:
+      containers:
+      - image: jketterl/openwebrx:stable
+        imagePullPolicy: IfNotPresent
+        name: openwebrx
+        ports:
+        - containerPort: 8073
+          protocol: TCP
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - mountPath: /dev/bus/usb
+          name: usb-path
+        - mountPath: /var/lib/openwebrx
+          name: openwebrx-settings
+      volumes:
+      - name: usb-path
+        hostPath:
+          path: /dev/bus/usb
+      - name: openwebrx-settings
+        hostPath:
+          path: /etc/openwebrx
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: frontend
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8073
+  selector:
+    app: openwebrx
+  type: ClusterIP
+  sessionAffinity: None
