@@ -13,6 +13,11 @@ variable "fqdn" {
   type        = string
   default     = ""
 }
+variable "serviceName" {
+  description = "k8s service name plus namespace, concatenated via '.'"
+    type        = string
+    default     = "frontend.sdr"
+}
 variable "siteName" {
   description = "k8s site name in F5 Distributed Cloud hosting openwebrx"
   type        = string

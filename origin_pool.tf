@@ -8,7 +8,7 @@ resource "volterra_origin_pool" "openwebrx" {
 
   origin_servers {
     k8s_service {
-      service_name  = "frontend.openwebrx"
+      service_name  = var.serviceName
       vk8s_networks = true
       site_locator {
         site {

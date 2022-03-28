@@ -1,6 +1,7 @@
 projectPrefix = "<prefix>"
 siteName = "<k8s-site-name>"
 fqdn = "openwebrx.mydomain.org"
+serviceName = "frontend.sdr"
 
 # production tenant:
 volterraUrl = "https://console.ves.volterra.io/api"
